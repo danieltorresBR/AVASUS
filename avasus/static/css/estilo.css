@@ -1,0 +1,155 @@
+.back {
+    background: #e2e2e2;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.div-center {
+    width: 400px;
+    height: 600px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 1em 2em;
+    border-bottom: 2px solid #ccc;
+    display: table;
+}
+
+H2 {
+    text-align: center
+}
+
+div.content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#btnEntrarCentralizado{
+    position:relative; 
+    top:10%;
+    left:51%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* 
+Cores do avasus 
+*/
+.bg-avasus {
+    background-color: #e74c3c;
+}
+
+.text-avasus {
+    color: #e74c3c;
+}
+
+.border-avasus {
+    border-color: #e74c3c;
+}
+.bg-avasus-escuro {
+    background-color: #a02f22;
+}
+
+.text-avasus-escuro {
+    color: #a02f22;
+}
+
+.border-avasus-escuro {
+    border-color: #a02f22;
+}
+
+
+/* 
+Tamanhos diferentes para fontes 
+*/
+.font-75 {
+    font-size: 75%;
+}
+
+.font-115 {
+    font-size: 115%;
+}
+
+.font-125 {
+    font-size: 125%;
+}
+
+.font-150 {
+    font-size: 150%;
+}
+
+.font-175 {
+    font-size: 175%;
+}
+
+
+/* 
+Formatação do DataTable 
+*/
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child::before {
+    top: 15px !important;
+}
+
+
+/* 
+Personalização da Barra de menu pra ficar igual do site 
+*/
+.navbar {
+    padding: 0 !important;
+}
+
+.navbar .navbar-brand{
+    padding-left: 10px;
+}
+
+.navbar a.nav-link{
+    color: white !important;
+}
+
+.navbar .nav-item{
+    padding: 3px 5px;
+}
+
+.navbar .nav-item:hover{
+    background-color: #a02f22;
+}
+
+
+/* 
+Alerta na validação dos formulários (login com senha errada, por exemplo) 
+*/
+.alert dl, .alert ol, .alert ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/*
+Largura máxima das tabelas para não ficar mal formatada
+*/
+table td{
+    max-width: 500px;
+}
+
+
+.auth-card {
+    margin-bottom: 30px;
+}
+
+.lead{
+    font-size: 10pt;
+}
+
+.fa-sign-out{
+    align-content: center;
+}

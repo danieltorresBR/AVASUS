@@ -1,0 +1,184 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Daniel Torres">
+
+    {% block titulo %}
+    <title>:: AVASUS ::</title>
+    {% endblock %}
+
+    <!-- Ícone do favicon -->
+    <link href="{% static 'img/favicon.png' %}" rel="shortcut icon" type="image/x-icon" />
+
+
+    <!-- Importação do Bootstrap 4 e do Font awesome -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- CSS adicional -->
+    <link rel="stylesheet" href="{% static 'css\estilo.css' %}">
+
+    <!-- Importação do Datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css" />
+
+    <!-- Ícone na barra de abas -->
+    <!-- <link rel="shortcut icon" href="{% static 'img/favicon.png' %}"> -->
+
+    <!-- Bloco destinado aos estilos para cada página -->
+    {% block styles %}
+
+    {% endblock %}
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0">
+
+        <!-- Bloco com o menu principal -->
+        {% block menu %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-avasus font-115 shadow">
+
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'img/avasus.jpg' %}" height="40" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mr-auto">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">
+                                <i class="fa fa-home" aria-hidden="true" id="textMenu"></i>
+                                Início
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="fa fa-graduation-cap" aria-hidden="true" id="textMenu"></i>
+                                Cursos
+                            </a>
+                        </li>
+
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">
+                                <i class="fa fa-home" aria-hidden="true" id="textMenu"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'sobre' %}">
+                                <i class="fa fa-info-circle" aria-hidden="true" id="textMenu"></i>
+                                Sobre
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-question-circle" aria-hidden="true" id="textMenu"></i>
+                                Ajuda
+                            </a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/logout">
+                                <i class="fa fa-sign-out" aria-hidden="true" id="textMenu"></i>
+                                Sair
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <!-- fim do container -->
+            </div>
+        </nav>
+        {% endblock %}
+
+
+        <!-- Bloco de conteúdo -->
+        <div class="container py-5">
+            {% block conteudo %}
+            <h3>Página inicial</h3>
+            {% endblock %}
+        </div>
+
+    </main>
+
+    <footer class="mt-auto">
+
+        <!-- Bloco acima do rodapé com links -->
+        {% block rodape-links %}
+        <div class="container-fluid bg-avasus text-white p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h5>Acesso rápido</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.ufrn.br" class="text-white" target="_blank">UFRN</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h5>Acesso rápido</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-nordeste/huol-ufrn" class="text-white" target="_blank">HUOL</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h5>Acesso rápido</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://lais.huol.ufrn.br/" class="text-white" target="_blank">LAIS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+
+        <!-- Rodapé -->
+        {% block rodape %}
+        <div class="container-fluid bg-light text-center p-3">
+            <div class="row">
+                <div class="col-md-4 mx-auto text-center">
+                    <p>
+                        <span class="lead">
+                            LAIS/HUOL - UFRN - Laboratório de Inovação Tecnológica em Saúde | <br>Av. Nilo Peçanha, 620 - 59012-300 Petrópolis - Natal/RN - Brasil
+                            <br>Desenvolvido por Daniel Torres</a>
+                            <br><a href="https://github.com/danieltorresBR" target="_blank">GitHub</a> | <a href="http://lattes.cnpq.br/2793016211817648" target="_blank">​Currículo Lattes</a>
+                        </span><br>
+                        <span></span>
+                    </p>
+                </div>
+
+                </p>
+            </div>
+            {% endblock %}
+
+    </footer>
+
+
+    <!-- Importação do JS -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
+
+    <!-- Bloco destinado aos scripts para cada página -->
+    {% block scripts %}
+
+    {% endblock %}
+
+</body>
+
+</html>

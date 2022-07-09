@@ -3,3 +3,17 @@ Repositório destinado ao armazenamento e versionamento do desafio/fase 2 da sel
 
 Candidato: Daniel Teodolino Barbosa Torres
 Vaga: Pesquisador Back-End Python
+
+
+-----
+
+##Comandos e Configurações
+
+Criando o Ambiente Virtual&nbsp
+ - mkvirtualenv env_lais
+
+Ativar o ambiente virtual
+ - workon env_lais
+
+Desativar o Ambiente Virtual
+ - deactivate
