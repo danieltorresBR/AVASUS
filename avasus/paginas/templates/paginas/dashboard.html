@@ -11,10 +11,17 @@
 <div class="container">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <h5>Seja bem-vindo<br></h5>
+    {% if user.perfil.nome_completo %}
     <p class="lead">
-        Seja bem-vindo<br>
-        Nome Completo: {{ request.user }}
+        Nome Completo: {{ user.perfil.nome_completo }}.<br>
+        Data de Nascimento: {{ user.perfil.data_nascimento }}.<br>
+        Idade: {{ user.perfil.data_nascimento }}.<br>
+        Cursos matriculados: 
     </p>
+    {% else %}
+    Você precisa completar o seu cadastro. Por favor, acesse o menu <a href="{%url 'atualizar-dados' %}">meus dados</a> para efetuar a operação.
+    {% endif %}
   </div>
 </div>
 </div>

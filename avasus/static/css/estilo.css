@@ -9,7 +9,7 @@
 .div-center {
     width: 400px;
     height: 600px;
-    background-color: #fff;
+    background-color: rgb(152, 152, 152);
     position: absolute;
     left: 0;
     right: 0;
@@ -45,26 +45,26 @@ div.content {
 Cores do avasus 
 */
 .bg-avasus {
-    background-color: #e74c3c;
+    background-color: #007e3f;
 }
 
 .text-avasus {
-    color: #e74c3c;
+    color: #007e3f;
 }
 
 .border-avasus {
-    border-color: #e74c3c;
+    border-color: #007e3f;
 }
 .bg-avasus-escuro {
-    background-color: #a02f22;
+    background-color: #00d369;
 }
 
 .text-avasus-escuro {
-    color: #a02f22;
+    color: #00d369;
 }
 
 .border-avasus-escuro {
-    border-color: #a02f22;
+    border-color: #00d369;
 }
 
 
@@ -121,7 +121,7 @@ Personalização da Barra de menu pra ficar igual do site
 }
 
 .navbar .nav-item:hover{
-    background-color: #a02f22;
+    background-color: #00d369;
 }
 
 

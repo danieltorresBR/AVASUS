@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import IndexView,  LoginView, DashboardView, SobreView, AjudaView
-from .views import UsuarioCreate
+from .views import UsuarioCreate, PerfilUpdate
 
 
 urlpatterns = [
@@ -11,4 +11,6 @@ urlpatterns = [
     path('sobre/', SobreView.as_view(), name='sobre'),
     path('ajuda/', AjudaView.as_view(), name='ajuda'),
     path('registrar/', UsuarioCreate.as_view(), name='registrar'),
+    path('atualizar-dados/', PerfilUpdate.as_view(), name='atualizar-dados'),
+
 ]

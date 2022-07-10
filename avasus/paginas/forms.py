@@ -11,8 +11,8 @@ class UsuarioForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
     
     def clean_email(self):
-        email = self.cleaned_data['email']
+        e = self.cleaned_data['email']
         if User.objects.filter(email=e).exists():
             raise ValidationError("O email {} já está em uso.".format(e))
-        
+            
         return e
