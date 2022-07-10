@@ -9,12 +9,25 @@
         <title>Login</title>
         {% endblock %}
 
-        {% block menu %}
-        {% endblock %}
+        <!-- {% block menu %}
+        {% endblock %} -->
 
         {% block conteudo %}
         <div class="row">
             <div class="col-md-4 offset-md-4">
+                {% if request.user.is_authenticated %}
+                <h3>Ação não permitida</h3>
+                <hr>
+                <p class="lead">
+                    <strong>
+                        Houve algum problema ao processar a ação desejada ou você não tem permissão para isso.
+                    </strong>
+                    <br>
+                    <a href="{% url 'dashboard' %}">
+                        <button type="button" class="btn btn-info btn-sm">Voltar</button>
+                    </a>
+                </p>
+                {% else %}
                 <div class="card auth-card">
                     <div class="card-body">
                         <h4 class="card-title text center">Entrar no AVASUS</h4>
@@ -26,6 +39,7 @@
                             {{ form|crispy }}
                             <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                         </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

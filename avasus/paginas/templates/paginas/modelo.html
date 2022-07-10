@@ -54,7 +54,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav mr-auto">
-                        {% if user.is_authenticated %}
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'dashboard' %}">
                                 <i class="fa fa-home" aria-hidden="true" id="textMenu"></i>
@@ -86,7 +86,7 @@
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">
-                                <i class="fa fa-home" aria-hidden="true" id="textMenu"></i>
+                                <i class="fa fa-sign-in" aria-hidden="true" id="textMenu"></i>
                                 Entrar
                             </a>
                         </li>
@@ -104,11 +104,36 @@
                             </a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="/accounts/logout">
                                 <i class="fa fa-sign-out" aria-hidden="true" id="textMenu"></i>
                                 Sair
                             </a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                <span id="username"> Seja bem-vindo {{ request.user }}</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Meus Dados
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    Alterar Senha
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a href="{%url 'logout' %}" class="dropdown-item">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    Sair
+                                </a>
+
+                            </div>
                         </li>
                         {% endif %}
                     </ul>

@@ -130,10 +130,13 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+MEDIA_URL = '/uploads/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 LOGIN_REDIRECT_URL = '/dashboard'
-
-LOGOUT_REDIRECT_URL = '/accounts/login'
+LOGIN_URL =  '/accounts/login'
+LOGOUT_REDIRECT_URL = 'index'
