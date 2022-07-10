@@ -9,21 +9,31 @@
 
 {% block conteudo %}
 <div class="container">
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h5>Seja bem-vindo<br></h5>
-    {% if user.perfil.nome_completo %}
-    <p class="lead">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h5>Seja bem-vindo<br></h5>
+      {% if user.perfil.nome_completo %}
+      <p class="lead">
         Nome Completo: {{ user.perfil.nome_completo }}.<br>
         Data de Nascimento: {{ user.perfil.data_nascimento }}.<br>
         Idade: {{ user.perfil.data_nascimento }}.<br>
-        Cursos matriculados: 
-    </p>
-    {% else %}
-    Você precisa completar o seu cadastro. Por favor, acesse o menu <a href="{%url 'atualizar-dados' %}">meus dados</a> para efetuar a operação.
-    {% endif %}
+        Cursos matriculados:
+      </p>
+      {% else %}
+      Você precisa completar o seu cadastro. Por favor, acesse o menu <a href="{%url 'atualizar-dados' %}">meus
+        dados</a> para efetuar a operação.
+      {% endif %}
+    </div>
   </div>
-</div>
+  <h5>Cursos Disponíveis<br></h5>
+  {% if user.perfil.data_nascimento %}
+  <p class="lead">
+    Nome do Curso: {{ user.modulo.nome }}.<br>
+    <a href="http://">Matricule-se</a>
+  </p>
+  {% else %}
+  Ainda não temos cursos disponíveis para a sua faixa etária.
+  {% endif %}
+
 </div>
 {% endblock %}
-
