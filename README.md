@@ -17,3 +17,13 @@ Ativar o ambiente virtual
 
 Desativar o Ambiente Virtual
  - deactivate
+
+ Criar tabelas conforme modelo
+  - python manage.py makemigrations
+
+  '''python manage.py makemigrations 
+     Migrations for 'cadastros':
+     cadastros\migrations\0001_initial.py
+          - Create model Modulo
+          - Create model Curso
+          - Create model Atividade
