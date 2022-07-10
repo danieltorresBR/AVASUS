@@ -1,17 +1,36 @@
+{%extends 'paginas/modelo.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="{% static 'css\estilo.css' %}">
+
+{% block titulo %}
+<title>Início</title>
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
 
 
-</head>
-<body>
-  <h1>LOGIN</h1>
-</body>
-</html>
+{% block conteudo %}
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4"> Seja bem-vindo ao AVASUS</h1>
+          <p class="lead">O AVASUS é o ambiente virtual de aprendizagem do Sistema Único de Saúde.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <a href="{% url 'login' %}">
+    <button type="button" class="btn btn-primary btn-lg btn-block">Entrar</button>
+  </a>
+  <br>
+  <a href="#">
+    <button type="button" class="btn btn-secondary btn-lg btn-block">Cadastra-se</button>
+  </a>
+</div>
+{% endblock %}
+
+{% block rodape-links %}
+{% endblock %}

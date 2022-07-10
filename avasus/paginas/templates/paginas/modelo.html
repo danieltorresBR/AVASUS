@@ -56,15 +56,23 @@
                     <ul class="navbar-nav mr-auto">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">
+                            <a class="nav-link" href="{% url 'dashboard' %}">
                                 <i class="fa fa-home" aria-hidden="true" id="textMenu"></i>
                                 Início
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="{% url 'dashboard' %}">
                                 <i class="fa fa-graduation-cap" aria-hidden="true" id="textMenu"></i>
                                 Cursos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dashboard' %}">
+                                <i class="fa fa-book" aria-hidden="true" id="textMenu"></i>
+                                Atividades
                             </a>
                         </li>
 
@@ -83,7 +91,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{% url 'ajuda' %}">
                                 <i class="fa fa-question-circle" aria-hidden="true" id="textMenu"></i>
                                 Ajuda
                             </a>
