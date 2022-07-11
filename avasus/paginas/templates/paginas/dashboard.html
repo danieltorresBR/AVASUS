@@ -16,7 +16,7 @@
       <p class="lead">
         Nome Completo: {{ user.perfil.nome_completo }}.<br>
         Data de Nascimento: {{ user.perfil.data_nascimento }}.<br>
-        Idade: {{ user.perfil.data_nascimento }}.<br>
+        Idade: {{ datetime.today }}.<br>
         Cursos matriculados:
       </p>
       {% else %}
@@ -26,11 +26,38 @@
     </div>
   </div>
   <h5>Cursos Disponíveis<br></h5>
-  {% if user.perfil.data_nascimento %}
-  <p class="lead">
-    Nome do Curso: {{ user.modulo.nome }}.<br>
-    <a href="http://">Matricule-se</a>
-  </p>
+  {% if user.perfil.nome_completo %}
+  <hr>
+  <div class="table-responsive">
+      <table class="table table-striped" id="tabela-listar">
+          <thead>
+              <tr>
+                  <th>Nome</th>
+                  <th>Carga Horária</th>
+                  <th>Opções</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              {% for curso in object_list %}
+              <tr>
+                  <td>{{ curso.nome }}</td>
+                  <td>{{ curso.carga_horaria }}</td>
+                  <td>
+                      <a href="#">Matricular-se</a>
+                  </td> 
+              </tr>
+              {% empty %}
+              <tr>
+                  <td colspan="4">Nenhum curso registrado</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+
+      </table>
+  
+  </div>
+
   {% else %}
   Ainda não temos cursos disponíveis para a sua faixa etária.
   {% endif %}
