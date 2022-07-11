@@ -16,7 +16,7 @@
       <p class="lead">
         Nome Completo: {{ user.perfil.nome_completo }}.<br>
         Data de Nascimento: {{ user.perfil.data_nascimento }}.<br>
-        Idade: {{ datetime.today }}.<br>
+        Idade: {{ user.perfil.data_nascimento }}.<br>
         Cursos matriculados:
       </p>
       {% else %}
